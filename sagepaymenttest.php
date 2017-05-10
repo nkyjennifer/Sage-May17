@@ -115,13 +115,13 @@ jQuery( function( $ ) {
         <form class="form" id="myCustomForm">
             <h1>Pay Your Invoice Here</h1>
 			<b>Only one of these feilds will be required, ideally</b>
-            <div class="form-group billing" id="account-number">
+            <div class="form-group" id="account-number">
                 <label class="control-label">Client Account Number</label>
 				<!-- TH - added "name", "required pattern", and "required" attributes.-->
                 <input type="text" class="form-control" id="customer_account" name="acct_num" value="" placeholder="5 digits . 3 digits (ie: 12345.123)" required pattern="[0-9]{5}[.][0-9]{3}" required />
                 <span class="help-block"></span>
             </div>
-			<div class="form-group billing" id="invoice">
+			<div class="form-group" id="invoice">
                 <label class="control-label">Invoice Number(s) </label>
 				<!-- TH - added "name" and "required" attributes.-->
                 <input type="text" class="form-control" id="customer_invoice" name="inv_num" value="" placeholder="" required />
