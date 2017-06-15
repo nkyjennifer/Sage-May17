@@ -1,7 +1,3 @@
-<html>
-<title>Sage Payments Static Page Test</title>
-</html>
-
 <?php
     require('shared.php');
     
@@ -97,36 +93,17 @@
     } 
 </style>
 
-<!-- TH - uses jquery to require either acct_num or inv_num, but not both. -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-jQuery( function( $ ) {
-  var $inputs = $( 'input[name=acct_num],input[name=inv_num]' );
-  $inputs.on( 'input', function() {
-    // Sets the required property of the other input to false if this input is not empty.
-    $inputs.not( this ).prop( 'required', !$( this ).val().length );
-  } );
-} );
-</script>
-<!-- TH - end of added jquery/javascript -->
-    
 <div class="wrapper text-center">
     <div id="customFormWrapper" class="static">
         <form class="form" id="myCustomForm">
             <h1>Pay Your Invoice Here</h1>
-			<b>Only one of these feilds will be required, ideally</b>
-            <div class="form-group" id="account-number">
-                <label class="control-label">Client Account Number</label>
-				<!-- TH - added "name", "required pattern", and "required" attributes.-->
-                <input type="text" class="form-control" id="customer_account" name="acct_num" value="" placeholder="5 digits . 3 digits (ie: 12345.123)" required pattern="[0-9]{5}[.][0-9]{3}" required />
-                <span class="help-block"></span>
-            </div>
-			<div class="form-group" id="invoice">
-                <label class="control-label">Invoice Number(s) </label>
+			<div class="form-group billing" id="invoice">
+                <label class="control-label">Invoice Number(s) and/ or Client Account Number<br /> </label>
 				<!-- TH - added "name" and "required" attributes.-->
                 <input type="text" class="form-control" id="customer_invoice" name="inv_num" value="" placeholder="" required />
                 <span class="help-block"></span>
-				<p class="directions">Please seperate multiple invoice numbers with a comma (ie: 123456, 234567, 345678)</p>
+				<p class="directions">Client Account Number - Please enter as using 5digits.3digits (ie: 12345.123). <br />
+				Invoice Numer(s): Please seperate multiple invoice numbers with a comma (ie: 123456, 234567, 345678)</p>
             </div>
 			<hr>
 
@@ -189,7 +166,7 @@ jQuery( function( $ ) {
             
             <button class="btn btn-primary" id="paymentButton">Pay Now</button>
 			
-			
+			<p>For further inqueries, please email <a href="mailto:Receivables@BradyWare.com">Receivables@BradyWare.com</a>.
         </form>
         <br /><br />
     </div>
@@ -323,8 +300,4 @@ jQuery( function( $ ) {
             }
         }
     });
-</script>
-
-
-
-</html>
+</script>	
